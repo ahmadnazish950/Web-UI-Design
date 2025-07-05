@@ -1,0 +1,1159 @@
+@font-face {
+  font-family: "Saprona-Regular";
+  src: url("./font/Saprona-Regular.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background: #f0f2f8;
+}
+
+.loader {
+  position: fixed;
+  inset: 0;
+  background: black;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "Saprona-Regular";
+  color: #1d83a6;
+  overflow: hidden;
+  transition: opacity 0.5s ease;
+
+  .loader-content {
+    text-align: center;
+  }
+
+  .brand-title {
+    font-size: 5rem;
+    color: #e94800;
+    letter-spacing: 3px;
+    margin-bottom: 1.2rem;
+    opacity: 0;
+  }
+
+  .sports-icons {
+    font-size: 2.6rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+
+    i {
+      transform: scale(0);
+      opacity: 0;
+    }
+  }
+
+
+  .loader-percentage {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    opacity: 0;
+  }
+}
+
+
+#main {
+  position: relative;
+  visibility: hidden;
+}
+
+
+.Navbar {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.Navbar h1 {
+  text-align: center;
+  font-family: "Saprona-Regular";
+  color: aliceblue;
+  font-weight: 400;
+  font-size: 30px;
+  margin-right: 2rem;
+}
+
+.Navbar img {
+  width: 100vw;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.Navbar ul {
+  width: 100vw;
+  list-style: none;
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 3rem;
+  text-decoration: solid;
+}
+
+.Navbar li {
+  font-family: "Saprona-Regular";
+  color: aliceblue;
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+.Navbar .additional {
+  background: orangered;
+  margin-left: 7px;
+  padding: 2px 8px;
+  text-align: center;
+  border-radius: 26px;
+  font-size: 15px;
+}
+
+.mode-toggle {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  display: flex;
+  align-items: center;
+  padding: 6px 14px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  z-index: 999;
+}
+
+.mode-toggle .icon-moon {
+  font-size: 16px;
+  margin-right: 12px;
+  background: transparent;
+  color: black;
+  pointer-events: none;
+}
+
+.mode-toggle .icon-sun {
+  font-size: 16px;
+  text-align: center;
+  padding-top: 8.9px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: white;
+  color: black;
+  pointer-events: none;
+}
+
+.mode-toggle i {
+  font-size: 15px;
+  color: black;
+}
+
+.nav-line {
+  position: absolute;
+  top: 110px;
+  width: 93%;
+  height: 1px;
+  opacity: 0.4;
+  background-color: aliceblue;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 9999;
+}
+
+.extra {
+  position: absolute;
+  top: 140px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+  align-items: center;
+  z-index: 99;
+}
+
+.extra h1 {
+  font-family: "Saprona-Regular";
+  font-size: 13px;
+  letter-spacing: none;
+  color: aliceblue;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+
+.hero-center-text {
+  position: absolute;
+  width: 22%;
+  top: 380px;
+  left: 10%;
+  transform: translateY(-50%);
+  z-index: 10;
+  color: white;
+  font-family: "Saprona-Regular";
+}
+
+.hero-center-text .letter {
+  display: inline-block;
+  font-weight: 400;
+}
+
+.hero-center-text h2 {
+  font-size: 2.5vw;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.hero-center-text p {
+  margin-top: 10px;
+  font-size: 0.95vw;
+  color: aliceblue;
+  opacity: 0.8;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.main-text {
+  position: relative;
+  width: 100%;
+}
+
+.main-text .text-wrap {
+  position: absolute;
+  bottom: 25px;
+  margin-left: 1rem;
+  font-family: "Saprona-Regular";
+  color: aliceblue;
+  font-size: 25.1vw;
+  font-weight: 600;
+  z-index: 2;
+}
+
+.text-wrap span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+.main-text img {
+  position: absolute;
+  rotate: -28deg;
+  left: 46.5vw;
+  bottom: 100px;
+  width: 46vw;
+  max-width: 100%;
+  z-index: 1;
+}
+
+#second {
+  width: 100%;
+  display: flex;
+  padding: 4rem;
+  background-color: #f4f6fc;
+  font-family: "Saprona-Regular";
+}
+
+.left-text {
+  width: 50%;
+}
+
+.left-text .tag {
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #333;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.left-text .dot {
+  width: 8px;
+  height: 8px;
+  background-color: #2b89ff;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.left-text .title-text {
+  font-size: 3.5vw;
+  max-width: 100%;
+  font-weight: 700;
+  color: #000;
+  line-height: 1.2;
+  margin-bottom: 26px;
+}
+
+
+.tag-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.tag-btn {
+  padding: 8px 14px;
+  background: white;
+  border-radius: 20px;
+  font-size: 18px;
+  color: #000;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 4rem;
+
+}
+
+.Bottom-text {
+  background: white;
+  border-radius: 12px;
+  padding: 20px 25px;
+  width: fit-content;
+  max-width: 80%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-top: 1.5rem;
+  font-family: "Saprona-Regular";
+}
+
+.Bottom-text h3 {
+  font-size: 24px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 15px;
+}
+
+.Bottom-text span {
+  font-size: 24px;
+  font-weight: 400;
+  color: #555;
+}
+
+.Bottom-text p {
+  font-size: 19px;
+  color: #555;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.sport-package {
+  border-radius: 12px;
+  padding: 18px 25px;
+  max-width: 80%;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Saprona-Regular";
+  margin-top: 1rem;
+}
+
+.sport-package h3 {
+  font-size: 24px;
+  font-weight: 500;
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+  width: 50rem;
+}
+
+.sport-package span {
+  font-size: 24px;
+  font-weight: 400;
+  color: #000;
+}
+
+.right-content-wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 22px;
+  background-color: white;
+  padding: 2.3rem;
+  border-radius: 5%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  font-family: "Saprona-Regular";
+}
+
+.right-top {
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.right-top .est {
+  font-size: 22px;
+  margin-top: 10px;
+}
+
+.right-top .est i {
+  color: orangered;
+}
+
+.right-top .desc {
+  font-size: 20px;
+  opacity: 0.5;
+  margin-top: 12px;
+}
+
+.right-top .heading {
+  font-size: 35px;
+  font-weight: 500;
+  margin-top: 9.3rem;
+}
+
+.right-top .join-btn {
+  padding: 13px;
+  border-radius: 30px;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  background-color: #000;
+  color: white;
+  font-size: 16px;
+}
+
+.right-image-card {
+  width: 450px;
+  margin-top: 1rem;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.right-image-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* third div  */
+
+.third-section {
+  background: #f8f9fc;
+  padding: 3rem 3rem;
+  border-radius: 32px;
+  max-width: 88rem;
+  margin: 1rem auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  font-family: "Saprona-Regular";
+}
+
+.third-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.tags {
+  display: flex;
+  gap: 15px;
+}
+
+.tags .tag {
+  background: #aaaaaa2e;
+  padding: 8px 16px;
+  border-radius: 24px;
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.section-label {
+  font-size: 18px;
+  color: #000;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.section-label .dot {
+  width: 8px;
+  height: 8px;
+  background: #2b89ff;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.third-heading {
+  font-size: 52px;
+  margin-top: 40px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 2.5rem;
+}
+
+.third-heading img {
+  width: 40px;
+  vertical-align: middle;
+}
+
+.third-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+
+.left-info h1 {
+  font-size: 6rem;
+  font-weight: 500;
+}
+
+.left-info h1 span {
+  font-size: 30px;
+  margin-left: 10px;
+  color: #aaa;
+}
+
+.left-info p {
+  margin: 15px 0;
+  font-size: 20px;
+  color: #777;
+}
+
+.arrow-btns {
+  display: flex;
+  gap: 8px;
+  margin-top: 12rem;
+}
+
+.arrow {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: none;
+  background: #eee;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.arrow.active {
+  background: orangered;
+  color: white;
+}
+
+.third-img {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 1rem;
+  margin-left: 10rem;
+}
+
+.third-img img {
+  width: 475px;
+  height: 465px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+/* fourth section */
+
+.activity-section {
+  display: flex;
+  gap: 3rem;
+  margin: 0.2rem;
+  padding: 3rem;
+  border-radius: 32px;
+  font-family: "Saprona-Regular";
+  flex-wrap: wrap;
+}
+
+.activity-left {
+  flex: 1;
+  min-height: 300px;
+  border-radius: 24px;
+
+}
+
+.activity-left img {
+  width: 700px;
+  border-radius: 24px;
+}
+
+.activity-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Label */
+.section-label {
+  font-size: 15px;
+  color: #000;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.section-label .dot {
+  width: 8px;
+  height: 8px;
+  background: #2b89ff;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Heading */
+.activity-heading {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+
+/* Icons */
+.activity-icons {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.activity-icons span {
+  width: 80px;
+  height: 80px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.activity-icons .extra {
+  background: orangered;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Description */
+.fourth-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.boost-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8.6rem;
+  max-width: 40%;
+}
+
+.activity-desc {
+  font-size: 20px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.activity-desc strong {
+  font-weight: 600;
+}
+
+.cta-btn {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: orangered;
+  color: white;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+
+}
+
+.cta-btn:hover {
+  background: #e94800;
+}
+
+
+.coming-img-placeholder img {
+  width: 275px;
+  height: 330px;
+  border-radius: 20px;
+}
+
+/* fifth section */
+
+.fifth-section {
+  background: #000;
+  color: white;
+  margin: 2.9rem;
+  padding: 3.5rem;
+  border-radius: 32px;
+  font-family: "Saprona-Regular";
+}
+
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.dot-label {
+  flex-shrink: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #aaa;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+.dot-label .dot {
+  width: 6px;
+  height: 6px;
+  background: #2b89ff;
+  border-radius: 50%;
+}
+
+.event-title {
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: white;
+  max-width: 60%;
+}
+
+
+/* 🔹 Event List Container */
+.event-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* 🔹 Each Event Item */
+.event-item {
+  background-color: black;
+  padding: 1.5rem;
+  border-radius: 14px;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+/* 🔹 Card Content Inside Item */
+.event-card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* 🔹 Title */
+.event-card-content strong {
+  font-size: 1.7rem;
+  color: white;
+}
+
+/* 🔹 Tags (default hidden) */
+.tags {
+  margin-top: 1.3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transform: translateY(8px);
+  transition: all 0.4s ease;
+}
+
+/* 🔹 Tags styling */
+.tags span {
+  background-color: transparent;
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 2px solid white;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: white;
+  transition: background 0.3s;
+}
+
+.tags span i {
+  font-size: 0.9rem;
+}
+
+/* 🔹 Show tags on hover */
+.event-item:hover .tags {
+  opacity: 1;
+  max-height: 200px;
+  transform: translateY(0);
+}
+
+
+/* 🔹 Button */
+.card-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: white;
+  transition: transform 0.3s;
+}
+
+.card-btn:hover {
+  width: 50px;
+  height: 50px;
+  transform: translateX(4px);
+  background-color: #eee;
+  border-radius: 50%;
+  color: black;
+}
+
+/* 🔹 Hover effect on full card */
+.event-item:hover {
+  background-color: #ff4500;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+
+/* sixth section */
+
+.sixth-section {
+  padding: 3.2rem;
+  border-radius: 32px;
+  font-family: "Saprona-Regular";
+}
+
+.sixth-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.sixth-heading {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.sixth-tags {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.sixth-tags .tag {
+  background: white;
+  padding: 8px 14px;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tag.highlight .dot {
+  width: 8px;
+  height: 8px;
+  background: #2b89ff;
+  border-radius: 50%;
+}
+
+.sixth-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+/* Left Testimonial Card */
+.testimonial-card {
+  background: white;
+  border-radius: 24px;
+  padding: 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.testimonial-top {
+  font-size: 18px;
+  color: #999;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot.small {
+  width: 6px;
+  height: 6px;
+  background: #2b89ff;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.quote {
+  max-width: 100%;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 18px;
+  color: #444;
+}
+
+.stars {
+  color: orange;
+  letter-spacing: 1.5px;
+}
+
+.user-info h4 {
+  margin-top: 17.8rem;
+  font-size: 35px;
+}
+
+.user-info p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #777;
+}
+
+.arrow-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: orangered;
+  color: white;
+  border: none;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.testimonial-img-placeholder img {
+  border-radius: 24px;
+  width: 700px;
+  height: 700px;
+}
+
+/* final section */
+
+.final-section {
+  padding: 4rem 3rem;
+  margin: 2.7rem;
+  background: #f9f9fc;
+  border-radius: 32px;
+  font-family: "Saprona-Regular";
+  color: #000;
+}
+
+.top-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.top-row img {
+  width: 180px;
+  border-radius: 24px;
+  margin-right: 3rem;
+}
+
+/* LEFT SIDE */
+.left-side .final-heading {
+  font-size: 50px;
+  margin-right: 24rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.final-tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.final-tags span {
+  background: white;
+  padding: 8px 14px;
+  font-size: 13px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.locations p {
+  font-size: 16px;
+  color: #333;
+  margin: 2px 0;
+}
+
+/* RIGHT SIDE */
+.right-side {
+  text-align: right;
+}
+
+.footer-nav,
+.social-links {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  font-size: 14px;
+  color: #333;
+}
+
+.footer-nav li,
+.social-links li {
+  margin-bottom: 4px;
+}
+
+.email {
+  font-size: 13px;
+  color: #333;
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  font-size: 12px;
+  color: #777;
+}
+
+.dot-icon {
+  margin-top: 1.9rem;
+  width: 90px;
+  height: 90px;
+  background: orangered;
+  border-radius: 50%;
+  position: relative;
+}
+
+.dot-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+}
+
+/* MIDDLE Branding */
+.middle-branding {
+  margin: 3rem 0;
+  text-align: center;
+}
+
+.middle-branding .seperate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.middle-branding .middle-logo {
+  max-width: 100%;
+  font-size: 354px;
+  font-weight: 700;
+  letter-spacing: -3px;
+}
+
+.middle-branding p {
+  font-size: 13px;
+  color: #777;
+}
+
+/* BOTTOM ROW */
+.bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.est {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.bottom-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.bottom-actions button {
+  background: #f1f2f5;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 24px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.bottom-copy {
+  font-size: 12px;
+  color: #777;
+}
